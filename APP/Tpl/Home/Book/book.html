@@ -1,0 +1,126 @@
+<extend name="Layout:layout"/>
+<block name="css">
+    <style type="text/css">
+        .book_image{
+            float: left;
+        }
+        .book_image img{
+            width: 220px;
+            height: 250px;
+        }
+        .book_box .book_describe{
+            float: left;
+            width:450px;
+        }
+        .book_box .book_describe .info_tag{
+            margin-right: 5px;
+            color: #666;
+        }
+        .bookComment_box{
+            margin-top: 30px;
+        }
+        textarea{
+            border: 1px solid rgba(0,0,0,0.4);
+        }
+       .comment_form input{
+            border: 1px solid rgba(0,0,0,0.4);
+        }
+    </style>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            $('#down').tooltip();
+            $('#down').on('click', function() {
+                var id = "{$book.id}";  //Book Id
+                var down = "{$book.down}"; //book 下载数
+                var data = {'id': id, 'down': down};
+                $.ajax({
+                    type: "post",
+                    url: "__APP__/Home/Book/down",
+                    data: data,
+                    success: function(msg) {
+                        alert(msg);
+                    }
+                });
+            });
+        });
+    </script>
+</block>
+<block name="main">
+       <include file="Common:book_top"/>
+    <div class="container">
+        <div class="center">
+            <div class="center_left">
+                <div class="book_box">
+                    <div class="book_image">
+                        <img src="{$book.pic}" title="{$book.name}" alt="{$book.name}"/>
+                    </div>
+                    <div class="book_describe">
+                        <h3>{$book.name}</h3>
+                        <p><span class="info_tag">作者</span>{$book.author}</p>
+                        <p class="book_summary">{$book.summary}</p>
+                        <p class="down_bar mt10">
+                            <a href="#" id="praise" title="觉得不错就点赞吧！" class="btn btn-primary pull-left">
+                                <i class="icon-heart icon-white"></i>赞({$book.praise}) 
+                            </a>
+                            <a id="down" href="{$book.download}" data-toggle="tooltip" 
+                               data-original-title="下载提取码{$book.code}"
+                               data-placement="right"
+                               class="btn btn-primary pull-right">
+                                <i class="icon-download icon-white"></i>下载电子书({$book.down})</a>
+                        </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div><wb:share-button appkey="ifga9" addition="number"
+                                          default_text="免费下载《{$book.name}》PDF版，很不错哦！"                  
+                                          type="button" ralateUid="1327127031"></wb:share-button>
+                        <script type="text/javascript">
+                            setQzoneBtn();
+                            loadQzoneScript();
+                        </script>
+                    </div>
+                </div>
+                <div class="bookComment_box">
+                    <div class="comment_box">
+                        <empty name="res_comment">
+                            <div class="comment_null">
+                                还没有任何人发表评论。
+                            </div>
+                        </empty>
+                        <foreach name="res_comment" item="v">
+                            <div class="comment_unit">
+                                <div class="comment_box to">
+                                    <div class="comment_face left">
+                                        <php>$rand = mt_rand(1,8);</php>
+                                        <img src="__PUBLIC__/img/face/face_{$rand}.jpg"/>
+                                    </div>
+                                    <div class="comment_content">
+                                        <div class="comment_nick">{$v.nick}说： <span class="right">{$v.cttime}</span></div>
+                                        <div class="comment_con">
+                                            {$v.content}
+                                        </div>
+                                        <div class="comment_info">来自：{$v.country} {$v.region} {$v.city} {$v.net} </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </foreach>
+                    </div>
+                    <div class="comment_form">
+                        <p><h4>发表新的回复</h4></p>
+                    <form action="__APP__/Home/Book/book/id/{$book.id}" method="post"
+                        <p class="mt10"><label>邮箱:</label><input type="email" name="email" /></p>
+                        <p><label>昵称:</label><input type="text" name="nick"  /></p>
+                        <p class="mt10">
+                            <label>评论：</label>
+                            <textarea name='comment' style="width:100%;height: 70px;"></textarea></p>
+                        <p class="pull-right">
+                            <button type="submit" class="btn btn-small">加上去...</button></p>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

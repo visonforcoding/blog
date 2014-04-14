@@ -1,0 +1,240 @@
+<extend name="Blog:baseTemplate"/>
+<block name="script">
+    <script type="text/javascript" src="__PUBLIC__/js/syntax/scripts/shCore.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/syntax/scripts/shAutoloader.js"></script>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/js/syntax/styles/shThemeRDark.css"/>
+    <script type="text/javascript">
+        $(function() {
+            SyntaxHighlighter.autoloader.apply(null, path(
+                    'applescript            @shBrushAppleScript.js',
+                    'actionscript3 as3      @shBrushAS3.js',
+                    'bash shell bsh         @shBrushBash.js',
+                    'coldfusion cf          @shBrushColdFusion.js',
+                    'cpp c                  @shBrushCpp.js',
+                    'c# c-sharp csharp      @shBrushCSharp.js',
+                    'css                    @shBrushCss.js',
+                    'delphi pascal          @shBrushDelphi.js',
+                    'diff patch pas         @shBrushDiff.js',
+                    'erl erlang             @shBrushErlang.js',
+                    'groovy                 @shBrushGroovy.js',
+                    'java                   @shBrushJava.js',
+                    'jfx javafx             @shBrushJavaFX.js',
+                    'js jscript javascript  @shBrushJScript.js',
+                    'perl pl                @shBrushPerl.js',
+                    'php                    @shBrushPhp.js',
+                    'text plain             @shBrushPlain.js',
+                    'py python              @shBrushPython.js',
+                    'ruby rails ror rb      @shBrushRuby.js',
+                    'sass scss              @shBrushSass.js',
+                    'scala                  @shBrushScala.js',
+                    'sql                    @shBrushSql.js',
+                    'vb vbnet               @shBrushVb.js',
+                    'xml xhtml xslt html    @shBrushXml.js'
+                    ));
+            SyntaxHighlighter.defaults['toolbar'] = false;
+            SyntaxHighlighter.config.bloggerMode = true;
+            SyntaxHighlighter.all();   //开启sh
+            $('#comment').val('');   //评论域清空
+            /*********滚动条事件************/
+            $(window).scroll(function() {
+                var scrollBar = document.documentElement.scrollTop;
+                // var top = document.body.scrollHeight;
+                // alert(top);
+                if (scrollBar < 50) {
+                    $('#scrollUp').css('display', 'none');
+                } else {
+                    $('#scrollUp').show();
+                }
+            }
+            );
+ 
+//            $('#sub_comment').click(function() {
+//                var comment = $('#comment').val();
+//                var user = "{$user}";
+//                var user_id = "{$user_id}";
+//                var blog_id = "{$blog_id}";
+//                if (user !== "登录") {
+//                    $.ajax({
+//                        type: 'POST',
+//                        url: "__APP__/Home/Blog/addComment",
+//                        data: {'user_id': user_id, 'blog_id': blog_id, 'comment': comment},
+//                        success: function(msg) {
+//                            if (msg) {
+//                                $('#sub_response').html("评论成功！");
+//                                $('#sub_response').slideDown('fast', function() {
+//                                    setTimeout("$('#sub_response').slideUp('fast')", 1000);
+//                                });
+//                            }
+//                        }
+//                    });
+//                } else {
+//                    $('#sub_response').html('请先登录');
+//                    $('#sub_response').slideDown('fast', function() {
+//                        setTimeout("$('#sub_response').slideUp('fast')", 1000);
+//                    });
+//
+//                }
+//
+//            });
+        });
+        function path()
+        {
+            var args = arguments,
+                    result = [];
+            for (var i = 0; i < args.length; i++)
+                result.push(args[i].replace('@', '__PUBLIC__/js/syntax/scripts/'));
+
+            return result;
+        }
+    </script>
+</block>
+<block name="css">
+    <style title="text/css">
+        .center_left{
+            background: #ffffff;
+        }
+        .date{
+            background: url('__PUBLIC__/images/sprite.png') bottom left no-repeat;
+            float: left;
+            margin-left: -40px;
+            padding-bottom: 14px;
+            width: 100px;
+
+        }
+        .date p{
+            background: #eb374b;
+            color: #fff;
+            font-family: Arvo, Cambria, Georgia, Times, serif;
+            font-size: 0.75em;
+            line-height: 1;
+            margin-bottom: 0;
+            padding: 12px 10px;
+            text-align: right;
+            text-transform: uppercase;
+        }
+        .date .day{
+            clear: both;
+            display: block;
+            font-size: 1.6875em;
+        }
+    </style>
+</block>
+<block name="main">
+    <div id="blogBoxTop"></div>
+    <div id="blog_box">
+        <div id="wrapper">
+            <div class="date">
+                <p>
+                    <span class="day">{$day}</span>
+                    {$year}/{$month}
+                </p>
+            </div> 
+            <div class="blog_title" style="border-bottom:1px dashed #008ED5;">{$pageTitle}</div>
+            <div class="blog_info">
+                <p>
+                    <span style="color:green"><i class="icon-folder-open"></i> 分类:</span>
+                    {$category}
+                    <span style= "color:green;margin-left:10px;"><i class="icon-tag"></i>  标签:</span>
+                    {$tag}
+                    <span style= "color:green;margin-left:10px;"><i class="icon-bookmark"></i> 作者:</span>
+                    {$author}
+                    <span style= "color:green;margin-left:10px;"><i class="icon-leaf"></i> 阅读次数:</span>
+                    ({$count})
+                </p>
+                <div id="blog_text">{$content}</div>
+                <div class="share_bar">
+                    <span class="pull-right">
+                        <script type="text/javascript" charset="utf-8">
+                            (function() {
+                                var _w = 106, _h = 58;
+                                var param = {
+                                    url: location.href,
+                                    type: '5',
+                                    count: '1', /**是否显示分享数，1显示(可选)*/
+                                    appkey: '183637053', /**您申请的应用appkey,显示分享来源(可选)*/
+                                    title: '', /**分享的文字内容(可选，默认为所在页面的title)*/
+                                    pic: '', /**分享图片的路径(可选)*/
+                                    ralateUid: '1327127031', /**关联用户的UID，分享微博会@该用户(可选)*/
+                                    language: 'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+                                    dpc: 1
+                                };
+                                var temp = [];
+                                for (var p in param) {
+                                    temp.push(p + '=' + encodeURIComponent(param[p] || ''))
+                                }
+                                document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://service.weibo.com/staticjs/weiboshare.html?' + temp.join('&') + '" width="' + _w + '" height="' + _h + '"></iframe>')
+                            })();
+                        </script>
+                    </span>
+                    <div class="clear"></div>
+                </div>
+                <div class="blog_menu mt20">
+                    <dd>上一篇：{$prev}</dd>
+                    <dd>下一篇：{$next}</dd>
+                </div>
+            </div>
+
+            <!--对话框 -->
+            <div id="sub_response" class="myModal">
+
+            </div>
+            <!--end-->
+        </div>
+    </div>
+                <!--  评论区 -->
+            <div class="comment_part mt20">
+                <empty name="res_comment">
+                    <div>
+                        还没有任何评论哦(☆_☆)/~~
+                    </div>
+                </empty>
+                <foreach name="res_comment" item="v">
+                    <div class="comment_unit">
+                        <div class="comment_box to">
+                            <div class="comment_face left">
+                                <php>$rand = mt_rand(1,8);</php>
+                                <img src="__PUBLIC__/img/face/face_{$rand}.jpg"/>
+                            </div>
+                            <div class="comment_content">
+                                <div class="comment_nick">{$v.nick}说： <span class="right">{$v.cttime}</span></div>
+                                <div class="comment_con">
+                                {$v.content}
+                                </div>
+                                <div class="comment_info">来自：{$v.country} {$v.region} {$v.city} {$v.net} </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+          <!-- end 评论区-->
+    <div class="title">我来说几句</div>
+    <div id="comment_form">
+        <form action="__APP__/Home/Blog/blogRead?id={$id}" method="post">
+                <input type="hidden" name="blog_id" value="{$id}" />
+            <p class="form_unit">
+                <label>昵称：</label>
+                <input type="text" required="required" id="nick" name="nick"/>
+            </p>
+            <p class="form_unit">
+                <label>邮箱：</label>
+                <input type="email" required="required" id="email" name="email"/>
+            </p>
+
+            <div class="form_unit form_comment">
+                <p><label class="left">评论：</label>
+                <div id="input_notice" class="right">
+                    您还可以吐槽
+                    <span id="input_nums">150</span>
+                    字。
+                </div>
+                <div class="clear"></div>
+                </p>
+                <textarea class="right" id="comment" name="comment" placeholder="我来说几句"></textarea>
+            </div>
+            <button id="sub_comment" type="submit" class=" mt20 btn btn-min btn-primary right">确认吐槽</button>
+            <div class="clear"></div>
+        </form>
+    </div>
+
+</block>

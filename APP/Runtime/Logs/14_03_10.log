@@ -1,0 +1,44 @@
+[ 2014-03-10T20:41:05+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T20:41:15+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T20:41:25+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:02:18+08:00 ] 0.0.0.0 /myblog/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.026001s ]
+
+[ 2014-03-10T22:29:12+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:29:26+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:29:34+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:31:03+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:31:21+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:32:25+08:00 ] 0.0.0.0 /myblog/Public/css/flat-ui1.css
+ERR: 无法加载模块:Public
+
+[ 2014-03-10T22:32:31+08:00 ] 0.0.0.0 /myblog/Home/Ask/index/index.html
+ERR: 无法加载模块:Ask
+
+[ 2014-03-10T22:32:57+08:00 ] 0.0.0.0 /myblog/Home/Ask/index/index.html
+ERR: 无法加载模块:Ask
+
+[ 2014-03-10T22:55:04+08:00 ] 0.0.0.0 /myblog/Home/Ask/index/index.html
+ERR: 无法加载模块:Ask
+

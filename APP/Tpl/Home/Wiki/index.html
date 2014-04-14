@@ -1,0 +1,78 @@
+<extend name="Layout:baseTemplate" />
+<block name="css">
+    <style type="text/css">
+        .left{
+            margin-left:20px;
+        }
+        .wiki-menu{
+            position: fixed;
+            top: 50px;
+            padding:0px;
+            border-radius: 6px 6px 6px 6px;
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.067);
+            background: #ffffff;
+        }
+        .wiki-menu li{
+           
+            width:200px;
+            list-style: none outside none;
+            border:1px solid #CCCCCC;
+            height:30px;
+            line-height:30px;
+            position: relative;
+        }
+        .wiki-menu li:first-child{
+            border-radius: 6px 6px 0 0;
+        }
+        .wiki-menu li:last-child{
+            border-radius: 0 0 6px 6px;
+        }
+        .wiki-menu li a{
+            padding-left: 20px;
+            text-shadow: 0px 0.4px 0px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+        }
+        .wiki-menu li a:hover{
+            background:#CCCCCC;
+            color:#FFFFFF;
+        }
+        .wiki-menu li i{
+           position: absolute;
+           left: 180px;
+           top:5px;
+        }
+        .wiki-menu li a{
+            display: block;
+        }
+        .content{
+            margin-left: 270px;
+            padding:20px;
+            min-height: 465px;
+        }
+        .color-box span.color{
+            display: inline-block;
+            width:60px;
+            height: 30px;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="left pull-left mt20">
+        <ul class="wiki-menu">
+            <li><a href="#" class="active">常用颜色<i class="icon-chevron-right"></a></i></li>
+           
+            <li><a href="#"> 前端设计 <i class="icon-chevron-right"></a></i></li>
+            <li><a href="#"> 前端设计 <i class="icon-chevron-right"></a></i></li>
+            <li><a href="#"> 前端设计 <i class="icon-chevron-right"></a></i></li>
+            <li><a href="#"> 前端设计 <i class="icon-chevron-right"></a></i></li>
+            <li><a href="#"> 前端设计 <i class="icon-chevron-right"></a></i></li>
+        </ul>
+    </div>
+    <div class="content mt20">
+        <h3>常用颜色</h3>
+        <div class="color-box">
+            <span class="color" style=" background: #5C5C5C"></span> #5C5C5C
+        </div>
+    </div>
+    <div class="clear"></div>
+</block>

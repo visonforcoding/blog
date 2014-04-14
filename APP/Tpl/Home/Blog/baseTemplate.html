@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+    <head>
+        <title>{$pageTitle}</title>
+        <meta name="keywords" content="PHP，java，C语言，web开发，代码分享" />
+        <meta name="description" content="小绾博客为个人IT博客致力于提供IT类心得分享，资料分享，代码分享。"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="   __PUBLIC__/js/bootstrap/css/bootstrap.css">
+        <link href="__PUBLIC__/css/flat-ui1.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/bootstrap/js/bootstrap.min.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.scrollUp.min.js"></script>
+        <!--[if lt IE 9]> 
+       <script type="text/javascript" src="__PUBLIC__/js/html5shiv.js"></script>
+       <script type="text/javascript" src="__PUBLIC__/js/respond.min.js.js"></script>
+       <![endif]--> 
+        <link href="__PUBLIC__/js/Metro/css/modern.css" rel="stylesheet">
+        <link href="__PUBLIC__/js/Metro/css/modern-responsive.css" rel="stylesheet">
+        <script type="text/javascript" src="__PUBLIC__/js/Metro/javascript/tile-slider.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/Metro/javascript/carousel.js"></script>
+        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=183637053" type="text/javascript" charset="utf-8"></script>
+         <script type="text/javascript" src="__PUBLIC__/js/script.js" charset="utf-8"></script>
+         <block name="script"></block>
+        <block name="css"></block>
+     </head>
+     <body id="{$bodyId}">
+     <include file="Common:nav"/>
+      <div class="container">
+            <div class="center">
+                <div class="center_left">
+                   <block name="main"></block>
+                </div>
+                <div class="center_right"> 
+                   <include file="Common:right_part"/>
+                </div> 
+            </div>
+        </div>
+    <include file="Common:footer"/>
+
+   </body>
+   </html>

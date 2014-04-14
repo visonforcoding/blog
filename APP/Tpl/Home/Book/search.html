@@ -1,0 +1,30 @@
+<extend name="Layout:layout"/>
+<block name="main">
+        <include file="Common:book_top"/>
+    <div class="container">
+        <div class="center">
+            <div class="center_left">
+                <div class="book_serch">
+                <foreach name="book" item="v">
+                    <div class="book_search_unit">
+                        <div class="pull-left">
+                    <img  src="{$v.pic}" class="book_ul" title="{$v.name}"/>
+                        </div>
+                        <div class="pull-left">
+                            <p class="book_name">
+                            <h5> <a href="__APP__/Home/Book/book/id/{$v.id}">{$v.name}</a></h5>
+                            </p>
+                            <p class="book_author">
+                                <span class="info_tag">作者：</span> {$v.author}
+                            </p>
+                            <p class="book_cat"><span class="info_tag">所属类别：</span>{$v.category}</p>
+                            <p class="book_admire"><span class="info_tag">推荐导读：</span>{$v.admire}</p>
+                        </div>
+                    <div class="clear"></div>
+                    </div>
+                </foreach>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

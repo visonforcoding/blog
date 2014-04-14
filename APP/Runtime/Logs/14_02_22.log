@@ -1,0 +1,383 @@
+[ 2014-02-22T00:10:52+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:12:47+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:19:11+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:21:38+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.002001s ]
+
+[ 2014-02-22T00:23:53+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:24:20+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:27:33+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:27:37+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.021001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:31:06+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:31:36+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/delAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.009000s ]
+SQL: DELETE FROM `admin` WHERE ( `id` IN ('19') ) [ RunTime:0.003001s ]
+
+[ 2014-02-22T00:31:37+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:34:40+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:35:23+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:35:29+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:36:11+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T00:42:52+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Blog/getBlog?id=10
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id WHERE ( blog.id = 10 )  [ RunTime:0.002001s ]
+
+[ 2014-02-22T00:49:47+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Blog/getBlog?id=10
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.008001s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id WHERE ( blog.id = 10 )  [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:51:18+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Blog/getBlog?id=10
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.006000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id WHERE ( blog.id = 10 )  [ RunTime:0.002000s ]
+
+[ 2014-02-22T00:53:57+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Blog/getBlog?id=10
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.006000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id WHERE ( blog.id = 10 )  [ RunTime:0.002001s ]
+
+[ 2014-02-22T01:03:18+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Blog/getBlog?id=10
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id WHERE ( blog.id = 10 )  [ RunTime:0.001000s ]
+
+[ 2014-02-22T01:19:02+08:00 ] 0.0.0.0 /myblog/index.php/admin/index/inex
+ERR: 非法操作:inex
+
+[ 2014-02-22T01:53:12+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.025001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T01:53:34+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:08:37+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:09:17+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.006001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:09:24+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.000000s ]
+
+[ 2014-02-22T02:09:31+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.008000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.007000s ]
+
+[ 2014-02-22T02:09:38+08:00 ] 0.0.0.0 /myblog/index.php/admin/blog/getBlog
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT blog.*,blog.id as blog_id,blog_cat.category FROM `blog` LEFT JOIN blog_cat ON blog.cat_id = blog_cat.id LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:09:47+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T02:09:51+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:09:54+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.000000s ]
+
+[ 2014-02-22T02:09:59+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.000000s ]
+
+[ 2014-02-22T02:10:02+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:10:05+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:10:09+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T02:10:14+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:10:16+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:10:19+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.003000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.000000s ]
+
+[ 2014-02-22T02:10:21+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.000000s ]
+
+[ 2014-02-22T02:11:10+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/delAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.005001s ]
+SQL: DELETE FROM `admin` WHERE ( `id` IN ('20') ) [ RunTime:0.002000s ]
+
+[ 2014-02-22T02:11:11+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.003001s ]
+
+[ 2014-02-22T02:11:47+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.000000s ]
+
+[ 2014-02-22T02:12:13+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:14:32+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.002000s ]
+
+[ 2014-02-22T02:15:45+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T02:15:50+08:00 ] 0.0.0.0 /myblog/index.php/admin/user/getAdmin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `admin` LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2014-02-22T11:15:11+08:00 ] 0.0.0.0 /myblog/index.php/home/book/index
+ERR: Model:top8您所请求的方法不存在！
+
+[ 2014-02-22T12:04:04+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/phpinfo
+ERR: 非法操作:phpinfo
+
+[ 2014-02-22T12:04:24+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+
+[ 2014-02-22T12:04:34+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+
+[ 2014-02-22T12:10:18+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+
+[ 2014-02-22T12:11:06+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+
+[ 2014-02-22T12:13:19+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+
+[ 2014-02-22T12:15:42+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+
+[ 2014-02-22T12:16:20+08:00 ] 0.0.0.0 /myblog/index.php/Admin/Index/sysinfo
+ERR: 模板不存在[./APP/Tpl/Admin/Index/phpinfo.html]
+

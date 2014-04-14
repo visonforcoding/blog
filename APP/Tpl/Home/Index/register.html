@@ -1,0 +1,112 @@
+<extend name="Layout:baseTemplate" />
+<block name="css">
+	<style type="text/css">
+	  body{
+	  	padding-bottom: 41px;
+
+	  }
+	  #register-block{
+	  	margin-left: 400px;
+	  	border: 1px solid rgb(196, 198, 202);
+	  	padding: 20px;
+	  	box-shadow: 3px 3px #EDEFF1;
+	  	border-radius: 5px;
+	  }
+	  #register-block label{
+	  	display: inline-block;
+	  	width: 150px;
+	  	text-align: right;
+	  	vertical-align:top;
+	  }
+      .question-box{
+     border:1px solid rgb(196, 198, 202);
+          padding: 10px;
+          border-radius: 5px;;
+      }
+      input[type="radio"]{
+          margin-left: 20px;
+      }
+	  footer{
+	  	position: fixed;
+	  	bottom: 0;
+	  }
+	</style>
+</block>
+<block name="script">
+	<script type="text/javascript">
+	  $(function(){
+          $("#cat_tab a:first").tab('show');
+    /*$('#username').keyup(function(){
+          var username = $('#username').val();
+          // alert(username);
+         /* regx = /(^\d+$)|(^[a-zA-Z]+$)/;
+          var check = regx.test(username);
+          if(check){
+          	$('#username').tooltip(option);
+          	$('#username').tooltip('show');
+          }else{
+          	alert('ff');
+          }
+        })*/
+	  });
+	</script>
+</block>
+<block name="main">
+	<div class="container mt10">
+		<div class="pull-left">
+		   <div class="question-box">
+               <ul class="nav nav-tabs" id="cat-tab">
+                   <li class="active"><a href="#home" data-toggle="tab">WEB前端</a></li>
+                   <li><a href="#profile" data-toggle="tab">php</a></li>
+                   <li><a href="#messages" data-toggle="tab">python</a></li>
+                   <li><a href="#settings" data-toggle="tab">C#</a></li>
+               </ul>
+               <div id="question-content" class="tab-content">
+                   <div class="tab-pane active" id="home">
+                     请听题：哪款浏览器最让前端程序员蛋疼？
+                       <p>
+                           <input name="one-a"  type="radio"/>chrome
+                           <input  name="one-a" type="radio"/>IE
+                           <input  name="one-a" type="radio"/>firefox
+                       </p>
+                   </div>
+                   <div class="tab-pane" id="profile">...</div>
+                   <div class="tab-pane" id="messages">...</div>
+                   <div class="tab-pane" id="settings">...</div>
+               </div>
+		   </div>
+		</div>
+		<div id="register-block">
+			<div id="register-form">
+				<form action="__APP__/Home/Index/doregister" method="post">
+				<div class="form-row">
+					<label for="username">用户名：</label>
+					<input name="username" data-toggle="tooltip" required="" id="username" type="text" placeholder="输入用户名"/>
+				</div>
+				<div class="form-row">
+					<label for="passwd">密码：</label>
+					<input name="passwd" type="password" required="" placeholder="密码"/>
+				</div>
+					<div class="form-row">
+					<label for="passwd">确认密码：</label>
+					<input name="passwd2" type="password" required="" placeholder="确认密码"/>
+				</div>
+				<div class="form-row">
+					<label for="email">Email：</label>
+					<input name="email"  required=""  type="email" placeholder="邮箱用于找回密码"/>
+				</div>
+				<div class="form-row">
+					<label for="vcode">验证码：</label>
+					<input name="vcode" type="text" required="" placeholder="证明你不是机器人"/>
+					<img style="vertical-align:top; border: 1px solid #0066cc" src="__APP__/Admin/Index/verify" alt="点击图片刷新.."  title="点击图片刷新" onclick="this.src = '__APP__/admin/index/verify/id/' + Math.random() + '/'"/>
+				</div>
+				<div class="form-row">
+					<label></label>
+					<button class="btn" type="submit">提交</button>
+				</div>
+           <a href="#" data-toggle="tooltip" title="first tooltip">hover over me</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</block>

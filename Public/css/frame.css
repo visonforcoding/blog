@@ -1,0 +1,53 @@
+/* 
+    Document   : frame
+    Created on : 2012-12-16, 17:50:48
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+/*全局设置*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*局部模块*/
+.top{
+   height: 37px;
+   width: 100%;
+   overflow: hidden;
+   clear: both;
+   margin-bottom:1px;
+}
+.left{
+    position: absolute;
+    top:40px;
+    left: 0px;
+    width: 212px;
+    display: block;
+    bottom: 0px;
+}
+.right{
+    left: 212px;
+    right: 0px;
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+}
+/*左侧*/
+.menu{
+    height: 100%;
+   
+}
+.menu iframe{
+    width: 99.99%;
+    /*height: 100%;*/
+}
+/*右侧*/
+.right iframe{
+    width:100%;
+    /*height: 100%;*/
+}

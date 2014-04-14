@@ -1,0 +1,441 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding-top:40px;
+
+}
+/**********解决冲突*********/
+p{
+    margin: 0px;
+}
+h1,h2,h3,h4,h5{
+    margin: 0px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+/*margin padding*/
+.mt10{
+    margin-top: 10px;
+}
+.mt20{
+    margin-top: 20px;
+}
+
+.border_gray{
+    border: 1px solid gray;
+}
+body > .container{
+    width:1012px;
+}
+.center{
+    margin-top: 10px;
+}
+.center_left{
+    border-radius: 10px;
+    width:709px;
+    float: left;
+}
+.center_right{
+    float:right;
+    width: 260px;
+    margin-left:20px;
+    padding: 5px;
+}
+.clear{
+    clear: both;
+}
+/***********input***/
+textarea, input[type="text"], input[type="password"], 
+input[type="datetime"], input[type="datetime-local"],
+input[type="date"], input[type="month"], input[type="time"], 
+input[type="week"], input[type="number"], input[type="email"],
+input[type="url"], input[type="search"], input[type="tel"], 
+input[type="color"], .uneditable-input {
+    border-radius: 0px;
+}
+
+/**我的模态对话框***/
+.myModal{
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    border:2px solid #315ad9;
+    background:#ffffff;
+    display: none;
+    position: fixed;
+    top:40px;
+    left:600px;
+
+}
+/**************************syntax**********************************/
+.code .container{
+    width: 100%;
+}
+
+.syntaxhighlighter {
+    background-color: #1b2426 !important;
+    text-indent: 0px;
+}
+.syntaxhighlighter code{
+    font-size:14px !important;
+    padding:0;
+    background-color:transparent;
+    border:none;
+}
+
+/**************************导航   nav ****************************/
+#user-box{
+    margin-right: 100px;
+}
+/**************分页栏********************/
+.pagination ul > li {
+    display: inline-block;
+}
+.pagination li{
+    margin-right:5px;
+}
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    background: #00438a;
+    color: #ffffff;
+}
+.pagination li.active a{
+    background: #00438a;
+    color: #ffffff;
+}
+/*footer 来自flat-ui*/
+footer{
+    background-color: #edeff1;
+    color: #bac1c8;
+    font-size: 15px;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;   
+}
+#login{
+    padding-bottom: 41px;
+}         
+#login footer{
+    position: fixed;
+    bottom: 0;
+}        
+footer a {
+    color: #9aa4af;
+    font-weight:700;
+}
+#scrollUp{
+    bottom:45px;
+    right: 20px;
+    height: 38px;
+    width: 38px;
+    background: url('../images/top.png');
+}
+.copy_right{
+    text-align: center;
+}
+/****************blog index***********************/ 
+#top_show img{
+    background:#FFFFFF;
+    border:1px solid ;
+    padding:10px;
+}
+#user_img{
+    margin: 10px auto auto 20px;
+    display:inline-block;
+    padding:5px;
+}
+
+#user_img:hover{
+
+}
+.cat_ul li{
+    list-style-type: none;
+}
+span.cat_name{
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+}
+#blog_box{
+    padding:0px 10px;
+    /*border:1px solid gray;*/
+}
+.blog_title{
+    font-weight: bold;
+    font-size: 17px;
+    min-width: 200px;
+    overflow: auto;
+    margin-left:40px;
+    margin-top: 20px;
+}
+.blog_text{
+    margin: 5px;
+    padding: 10px;
+    line-height: 30px;
+}
+.blog_text img{
+    width:180px;
+    height: 160px;
+    margin-right:20px;
+    padding:10px;
+    border:1px solid #0088cc;
+    background: #FFFFFF;
+    float:left;
+}
+.blog_text .blog_content{
+    float: left;
+}
+.blog_text .blog_content:first-letter{
+    font-size: 24px;
+    font-weight: bold;
+}
+#tag_box{
+    border-radius: 5px;
+    background:#F1F2E1;
+    width: 230px;
+    min-height: 75px;
+    padding: 10px 10px;
+}
+/*文章内容*/        
+#index #blog_text{
+    margin: 5px;
+    padding: 10px;
+    text-indent: 20px;
+}
+#blog_text span{
+    background:transparent;
+}
+.share_bar{
+    /*background:#EDED40;*/
+}
+/*********************文章评论*************/
+
+#comment_form{
+    padding: 10px;
+    /*border-top: 1px dashed gray;*/
+    background: #FAF9F5;
+    /*margin-top:40px;*/
+}
+.title{
+    height: 40px;
+    line-height:40px;
+    color: #0088cc;
+    padding-left:10px;
+    font-size:17px;
+}
+#input_nums{
+    font-size:20px;
+    font-weight:200;
+}
+.comment_part{
+    background: #ffffff;
+    padding: 20px;
+    border: 6px solid #e6e4df;
+}
+#comment{
+    padding: 10px;
+}
+.comment_unit{
+    border-bottom:1px dashed gray;
+    margin-top:10px;
+}
+.comment_box{
+    position: relative;
+    margin-bottom: 10px;
+}
+.comment_face img{
+    width:100px;
+    height:100px;
+}
+.comment_nick{
+    color: #167f39;
+}
+/*.comment_content{
+    display: inline-block;
+    min-width: 480px;
+    min-height:80px;
+    background: #31D12B;
+    border-radius: 5px;
+    padding: 10px 10px 0px 10px;
+    margin-top: 20px;
+    position:relative;
+}*/
+
+.comment_con{
+    background:#E6E4DF;
+    padding:10px;
+    position:relative;
+    top:20px;
+    border-radius:5px;
+}
+.comment_con:before{
+    content:"";
+    width:0px; 
+    height:0px; 
+    border-width: 10px;
+    border-style: solid;
+    border-color:transparent transparent #E6E4DF transparent;
+    position:absolute;
+    left:10px;
+    top:-20px;
+    display: inline-block; 
+}
+.comment_info{
+    color: #E6E4DF;
+    margin-top: 25px;
+}
+.to .comment_content{
+    margin-left:15px;
+    float:left;
+    /*box-shadow: 5px 2px 6px #000;*/
+    width: 525px;
+}
+.back .comment_content{
+    float: right;
+    margin-right: 20px;
+    box-shadow: -5px 2px 6px #000;
+}
+/*.to .comment_content:before {
+    content:"";
+    width:0px; 
+    height:0px; 
+    border-bottom:10px solid transparent;   left arrow slant 
+    border-top:10px solid transparent;  right arrow slant 
+    border-right:10px solid #31D12B;  bottom, add background color here 
+      border-right:10px solid red;
+    border-left: 0px solid transparent;
+    position:absolute;
+    left:-10px;
+    display: inline-block; 
+}*/
+.back .comment_content:before {
+    content:"";
+    width:0px; 
+    height:0px; 
+    border-bottom:10px solid transparent;  /* left arrow slant */
+    border-top:10px solid transparent; /* right arrow slant */
+    border-left:10px solid #31D12B; /* bottom, add background color here */
+    border-right: 0px solid transparent;
+    position:absolute;
+    left:549px;
+    display: inline-block; 
+}
+.form_unit{
+    margin-left:20px;
+}
+.form_comment textarea{
+    width: 98%;
+    height:100px;
+}
+/*******************readBlog page************************************/
+#blogRead{
+    background: url("../images/wood.jpg") repeat scroll 0% 0% transparent;
+}
+#blogRead #blogBoxTop{
+    background: url("../images/nav.jpg") repeat scroll 0% 0% transparent;
+    height: 40px;
+    border-radius: 0.4em 0.4em 0px 0px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6);
+    padding: 10px 0px 0px;
+}
+#blogRead h4{
+    margin:0px;
+}
+#blogRead #wrapper{
+    background: url("../images/container.png") repeat-x scroll left top transparent;
+    z-index: 1;
+    padding-top: 10px;
+}
+#blogRead #blog_box{
+    /*background: url("../images/paper.png") repeat scroll center top rgb(255, 255, 255);*/
+    background-color:#ffffff;
+    padding-bottom: 20px;
+}
+#blogRead #blog_text{
+    padding: 10px;
+    text-indent: 20px;
+    font-size: 16px;
+}
+.comment_face img{
+    border-radius: 50%;
+    padding:2px;
+    border:1px #bac1c8 solid;
+}
+/**************  book 评论 ***********************/
+.comment_null{
+    padding: 20px;
+}
+/*************************login page***********************************/
+#login #login-slide{
+    width: 600px;
+    height: 400px;
+}
+#login input[type="text"]{ 
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0px 1px 0px rgb(255, 255, 255), 0px -2px 5px rgba(0, 0, 0, 0.08) inset;   
+    background: url("../images/form.png") no-repeat scroll 0% 0% rgb(234, 231, 231);
+    padding: 15px 10px 15px 40px;
+    background-position: 10px 10px !important;
+}
+#login input[type="text"]:focus,#login input[type="password"]:focus{
+    border: 1px solid rgb(237, 28, 36);
+    background: url("../images/form.png") no-repeat scroll 0% 0% #ffffff;
+} 
+#login input[type="password"]{
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0px 1px 0px rgb(255, 255, 255), 0px -2px 5px rgba(0, 0, 0, 0.08) inset;   
+    background: url("../images/form.png") no-repeat scroll 0% 0% rgb(234, 231, 231);;
+    padding: 15px 10px 15px 40px;
+    background-position: 10px -53px !important;
+} 
+
+/********************* book ************************/
+.book_top{
+    background: #F6F6F1;
+    height: 80px;
+    /*padding-top: 40px;*/
+    overflow:hidden;
+}
+.book_logo{
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    margin-right:20px;
+}
+.top_wrap{
+    padding: 10px;
+    width: 30%;
+    margin: 10px auto auto auto;
+    height:50px;
+}
+.top_search{
+    float: left;
+}
+.book_top .search_bt{
+    vertical-align: top;
+}
+/***book  列表****/
+.book_serch{
+    margin-top: 40px;
+}
+.book_ul{
+    width: 140px;
+    height: 164px;
+}
+.book_search_unit{
+    border-bottom: none;
+    border-top: 1px dashed #ccc;
+    margin: 0;
+    padding: 10px 0;
+}
+.book_author,.book_cat,.book_admire{
+    margin-top: 10px;
+}

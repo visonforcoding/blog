@@ -1,0 +1,63 @@
+/* 
+Document   : adminlogin
+Created on : 2012-12-21, 12:21:39
+Author     : Administrator
+Description:
+Purpose of the stylesheet follows.
+*/
+
+root { 
+display: block;
+}
+body{
+    background:url('../images/bg.jpg') repeat scroll;
+    color:#ffffff;
+    font-size: 15px;
+}
+a{
+    text-decoration: none;
+
+}
+#login-box{
+    border: 5px solid rgb(238, 238, 238);
+    background: #ffffff;
+    width: 570px;
+    position:absolute;
+    top:120px;
+    left: 300px;
+    height: 300px;
+}
+.login_top{
+    background:  #00cccc;
+    height: 32px;
+}
+.login_top a{
+    color:  #ffffff;
+}
+.login_top span{
+    float: right;
+    margin-top: 5px;
+}
+.login_main{
+    margin-left: 30px;
+    margin-top:40px;
+    width: 320px;
+    height: 160px;
+    overflow: hidden;
+
+}
+table{
+    border: 0;
+}
+table td{
+    height: 30px;
+}
+.login_power{
+    color: #ffffff;
+    font-size: 14px;
+    text-align: right;
+    height: 34px;
+    position: relative;
+    bottom:-45px;
+}
+

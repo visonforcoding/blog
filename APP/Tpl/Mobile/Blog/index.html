@@ -1,0 +1,38 @@
+<extend name="Layout:base"/>
+<block name="css">
+   .ui-listview > li p{
+     white-space: normal;
+     width: 80%;     
+    } 
+</block>
+<block name="header">
+        <div data-role="header" data-theme="b" data-position="fixed">
+            <a href="__APP__/Home/Blog/index" rel="external" data-icon="home" >小绾</a>
+            <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid">View</a>
+            <span class="ui-title"></span>
+            <div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">按类别显示</li>
+            <foreach name="res_blogCat" item="v">
+            <li><a rel="external" href="__APP__/Mobile/Blog/index/category/{$v.id}"><span class="cat_name">
+                        {$v.category}</span><span class="blog_nums">({$v.count(*)})</span></a>
+                  </li>
+            </foreach>
+        </ul>
+</div>
+        </div>
+</block>
+<block name="main">
+    <ul data-role="listview" data-inset="true">
+        <foreach name="res_blog" item="v">
+            <li data-role="list-divider">{$v.title}<span class="ui-li-count">阅读（{$v.count}）</span></li>
+            <li><a rel="external" href="__APP__/Mobile/Blog/blogRead/id/{$v.blog_id}">
+                    <h2>{$v.author}</h2>
+                    <p>{$v.content}......</p>
+                    <p class="ui-li-aside"><strong>{$v.cttime}</strong></p>
+                </a>
+            </li>
+        </foreach>
+       
+    </ul>
+</block>

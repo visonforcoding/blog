@@ -1,0 +1,146 @@
+/* 
+    Document   : index
+    Created on : 2012-12-6, 20:08:39
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    background: #FFF;
+}
+body{
+    font: 12px Verdana,Arial,Helvetica,sans-serif;
+}
+/*栏目*/
+/*.header_top{
+    background: #F4F4F4;
+    height: 25px !important;
+    border-bottom: 1px solid rgb(219,219,219);
+    
+    text-align: right;
+}*/
+.title{
+    height:32px;
+    background:#3366CC;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #ffffff;
+
+    font-weight:  bolder;
+    line-height:32px;
+}
+strong{
+    margin: 0 10px;
+    font-size: 14px;
+}
+.title a{
+    float: right;
+    margin-right: 5px;
+    color:  #ffffff;
+}
+/*位置*/
+.w960{
+    width: 960px;
+
+    padding: 2px;
+}
+.center{
+    margin: 0 auto;
+}
+.clear{
+    overflow: hidden;
+}
+.mt1{
+    margin-top: 8px;
+}
+/*int*/
+ul{
+    list-style:none;
+}
+a{
+    color:#256EB1;
+    text-decoration:none;
+
+}
+img{
+    border: none;
+}
+
+/*内容 左部分*/
+.content_top{
+    overflow: hidden;
+}
+.pleft{
+    width: 360px;
+    float: left;
+    overflow: hidden;
+}
+.pleft_width{
+    width: 712px;
+}
+#flashnews{
+    margin: 10px 0 0 10px;
+
+}
+/*右部分*/
+.pright{
+    width:590px;
+    float: right;
+    height: 363px;
+    overflow: hidden;
+    border: 1px solid rgb(218, 218, 218);
+}
+/*中间部分*/
+.center_part{
+    overflow: hidden;
+}
+.center_part_left{
+    width:63%;
+    float: left;
+}
+.aboutus{
+    overflow: hidden;
+    padding: 10px;
+    line-height: 20px;
+    background:  #ffffff;
+}
+.newsList{
+    overflow: hidden;
+    padding:10px;
+}
+.newsList a:hover{
+    color: #f60;
+    text-decoration: underline;
+}
+.newsList ul{
+    list-style:url('../images/info_mange/document_letter.png') inside;
+}
+.center_part_right{
+    width: 36%;
+    float: right;
+}
+.center_part_right dl{
+    padding:10px;
+}
+.loginBox dd{
+    margin-top: 5px;
+}
+.loginBox{
+    padding: 30px;
+}
+/*底部*/
+.footer{
+    text-align: center;
+}
+.powerby{
+    font-size: 10px;
+    line-height: 25px;
+}
+.copyright{
+    line-height: 23px;
+}

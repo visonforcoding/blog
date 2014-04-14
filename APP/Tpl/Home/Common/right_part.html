@@ -1,0 +1,29 @@
+<div class="user_box">
+                <div class="user_img">
+                    <span id="user_img"><img  src="__PUBLIC__/img/logo/user.jpg"></span>
+                </div>
+                <div class="user_info" >
+                    <dd>昵称：小绾~</dd>
+                  <dd><wb:follow-button uid="1327127031" type="red_2" width="136" height="24" ></wb:follow-button></dd>
+                </div>
+</div>
+<div class="cat_box">
+                 <h4 style="line-height:20px;height:20px;border-bottom:1px dashed #F5F5F5;  ">博文分类</h4>
+                 <ul class="cat_ul">
+                     <foreach name="res_blogCat" item="vo">
+                         <li><a href="__APP__/Home/Blog/index/category/{$vo.id}.html"><span class="cat_name">{$vo.category}</span></a>
+                        <span class="blog_nums">({$vo.count(*)})</span></li>
+                     </foreach>
+                </ul>
+ </div>
+  <h4 style="line-height:20px;height:20px;border-bottom:1px dashed #F5F5F5;  ">文章标签</h4>
+ <div id="tag_box">
+     <foreach name="res_tag" item="vo">
+        <php>$ran= array_rand($tag_color);
+            $color =$tag_color["$ran"];
+            $pad = mt_rand(0,10);
+            $mag = mt_rand(1,5);
+        </php>
+        <span class="label {$color}" style="padding:{$pad}px;margin:{$mag}px;">{$vo.tag}</span>
+     </foreach>
+ </div>

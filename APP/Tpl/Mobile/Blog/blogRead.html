@@ -1,0 +1,14 @@
+<extend name="Layout:base"/>
+<block name="header">
+    <div data-role="header" data-theme="b"  data-position='fixed'>
+      <a href="__APP__/Mobile/Blog/index" rel="external" data-role="button" data-icon="back" class='ui-btn-left' >返回</a>
+      <h1>{$pageTitle}</h1>
+      <a href="__APP__/Mobile/Blog/index" data-role="button" data-icon="heart" class='ui-btn-right'>赞</a>
+    </div><!-- /header -->
+</block>
+<block name="main">
+    <div class="ui-content">
+        <p class="author">作者/{$author}</p>
+        {$content}
+    </div>
+</block>

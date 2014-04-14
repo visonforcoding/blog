@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:wb=“http://open.weibo.com/wb”>
+    <head>
+        <title>{$pageTitle}</title>
+        <meta name="keywords" content="{$seo_keywords|default='PHP，web开发，代码分享，电子书下载'}" />
+        <meta name="description" content="{$seo_description|default='小绾博客为个人IT博客致力于提供IT类心得分享，资料分享，代码分享，电子书分享。'}"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/bootstrap/css/bootstrap.css">
+        <link href="__PUBLIC__/css/flat-ui1.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+        <!--[if lt IE 9]> 
+       <script type="text/javascript" src="__PUBLIC__/js/html5shiv.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/respond.min.js.js"></script>
+        <![endif]--> 
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/bootstrap/js/bootstrap.min.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/js/jquery.scrollUp.min.js"></script>
+        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=183637053" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="__PUBLIC__/js/script.js" charset="utf-8"></script>
+    <block name="css"></block>
+    <block name="script"></block>
+</head>
+<body id="{$bodyId}">
+<include file="Common:nav"/>
+<block name="main">
+</block>
+<include file="Common:footer"/>
+<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"></a>
+</body>
+</html>

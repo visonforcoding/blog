@@ -1,0 +1,49 @@
+[ 2014-03-25T22:42:14+08:00 ] 127.0.0.1 /Admin/Blog/fm/path/D:/xampp/htdocs/myblog/Resources/image/20131113?_=1395758533279
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.008001s ]
+ERR: 非法操作:fm
+
+[ 2014-03-25T22:43:13+08:00 ] 127.0.0.1 /Admin/Blog/fm/path/D:/xampp/htdocs/myblog/Resources/image?_=1395758591977
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.011000s ]
+ERR: 非法操作:fm
+
+[ 2014-03-25T22:55:53+08:00 ] 127.0.0.1 /Admin/Blog/fm/path/D%3A/xampp/htdocs/myblog/Resources/image?_=1395759352052
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.008000s ]
+ERR: 非法操作:fm
+
+[ 2014-03-25T22:56:48+08:00 ] 127.0.0.1 /Admin/Blog/fm/path//Resources/image/20131113?_=1395759407785
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.007001s ]
+ERR: 非法操作:fm
+
+[ 2014-03-25T23:06:20+08:00 ] 127.0.0.1 /Admin/Blog/fm/path/?_=1395759979093
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.004000s ]
+ERR: 非法操作:fm
+
+[ 2014-03-25T23:06:34+08:00 ] 127.0.0.1 /Admin/Blog/fm/path/?_=1395759993022
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.004000s ]
+ERR: 非法操作:fm
+
+[ 2014-03-25T23:09:50+08:00 ] 127.0.0.1 /Admin/Blog/fm/path/%2CResources%2Cimage%2C20131113?_=1395760189792
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `blog` [ RunTime:0.011001s ]
+ERR: 非法操作:fm
+

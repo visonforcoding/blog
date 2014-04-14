@@ -1,0 +1,195 @@
+/*后台管理基本样式*/
+
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font: 12px Verdana,Arial,Helvetica,sans-serif;
+}
+.ml20{
+ margin-left: 20px;   
+}
+/*index*/
+
+ul{
+    margin: 0;
+}
+/** index left menu ******/
+#top{
+
+}
+#center{
+    /*height: 1000px;*/
+    min-height: 700px;
+    overflow:auto;
+}
+#left{
+    width:220px;
+    min-height: 700px;
+    border-top: 6px solid #CCCCFF;
+    border-right:6px solid #CCCCFF;
+    overflow: auto;
+    background: #F5F5F5;
+    /*position: relative;*/
+    float: left;
+    /*z-index: 999;*/
+}
+#right{
+    float: right;
+    /*width:100%;*/
+    min-height: 700px;
+}
+#main{
+    width: 100%;
+    min-height:700px;
+    overflow: scroll;
+}
+/***左侧栏*****/
+.left-top{
+    border-bottom: 1px solid #ccc;
+}
+.left-top .left-top_unit{
+    height:30px;
+    line-height:30px;
+    float: left;
+    width:107px;
+}
+.left-top .left-top_unit a{
+    text-decoration: none;
+    display:block;
+    text-align: center;
+}
+.left-top .front{
+    border-right: 1px solid #ccc;
+}
+.left-top .left-top_unit a:hover{
+    background:#4387F5;
+    color: #ffffff;
+    font-weight: bold;
+}
+ul.menu{
+    position:static;
+    overflow: visible;
+    margin-top: 30px;
+}
+ul.menu li{
+    text-align: center;
+}
+ul.menu > li{
+
+}
+ul.menu li.toggle{
+    border-top: 2px solid #CCCCCC;
+}
+ul.menu li.toggle:last-child{
+    border-bottom: 2px solid #CCCCCC;
+}
+ul.menu li a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+ul.toggle-menu{
+    display: none;
+}
+ul.menu li.toggle >a{
+    background: #1F75B7;
+    color:#ffffff;
+}
+/***********input***/
+textarea, input[type="text"], input[type="password"], 
+input[type="datetime"], input[type="datetime-local"],
+input[type="date"], input[type="month"], input[type="time"], 
+input[type="week"], input[type="number"], input[type="email"],
+input[type="url"], input[type="search"], input[type="tel"], 
+input[type="color"], .uneditable-input {
+    border-radius: 0px;
+
+}
+input[type="text"],input[type="password"],select{
+    height: 25px;
+    line-height: 25px;
+    width: 150px;
+    padding: 1px 3px;
+}
+.form-control{
+    width: auto;
+}
+label{
+    width: 76px;
+    text-align: right;
+    font-size: 13px;
+    padding-right: 10px;
+    font-weight: normal;
+}
+.control-group{
+    margin-top: 20px;
+}
+/*editor textarea*/
+.editorBox{
+    background: #F5F5F5;
+    padding: 5px;
+    width: 80%;
+    margin-left: 80px;
+
+}
+.editorBox .ke-container{
+    border:none;
+}
+
+#picBox img.pic{
+    width:100px;
+    height: 70px;
+    padding:5px;
+    border:1px solid #99CCCC;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+#picBox img.pic:hover{
+    background: #005916;
+}
+#picBox div.toolbar{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    background:#F5F5F5;
+    padding:10px 0 10px 0;
+}
+#picBox div.toolbar a{
+    margin-right:20px;
+}
+/****文件管理******/
+.dir-tree{
+    font-size: 15px;    
+}
+.icon-add{
+    color:black;
+    font-size: 40px;
+}
+.folder span.icon-folder{
+    color: #ffcc66;
+}
+ul.dir-tree li{
+    list-style: none;
+}
+/**** 管理首页****/
+.gray_box{
+    padding: 10px;
+    margin: 10px;
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+
+/**解决easyui 与 bootstrap冲突***/
+.pagination{
+    display: block;
+}
+.panel-body{
+    padding: 0px;
+}
+.navbar{
+margin-bottom: 0px;
+border-radius: 0px;
+}

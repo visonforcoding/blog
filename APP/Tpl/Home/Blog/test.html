@@ -1,0 +1,81 @@
+<div id="blog_box">
+    <h4 style="border-bottom:1px dashed #008ED5;">{$pageTitle}</h4>
+    <div class="blog_info">
+        <dd>
+            <span style="color:green">分类：</span>
+            {$category}
+            <span style= "color:green;margin-left:10px;">标签：</span>
+            {$tag}
+            <span style= "color:green;margin-left:10px;">作者：</span>
+            {$author}
+            <span style= "color:green;margin-left:10px;">发布时间：</span>
+            {$cttime}
+        </dd>
+        <div id="blog_text">{$content}</div>
+        <div class="share_bar">
+            <span class="pull-right">
+                <script type="text/javascript" charset="utf-8">
+(function(){
+  var _w = 106 , _h = 58;
+  var param = {
+    url:location.href,
+    type:'5',
+    count:'1', /**是否显示分享数，1显示(可选)*/
+    appkey:'183637053', /**您申请的应用appkey,显示分享来源(可选)*/
+    title:'', /**分享的文字内容(可选，默认为所在页面的title)*/
+    pic:'', /**分享图片的路径(可选)*/
+    ralateUid:'1327127031', /**关联用户的UID，分享微博会@该用户(可选)*/
+    language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+    dpc:1
+  }
+  var temp = [];
+  for( var p in param ){
+    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+  }
+  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://service.weibo.com/staticjs/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+})()
+</script>
+     </span>
+     <div class="clear"></div>       
+        </div>
+        <div class="blog_menu mt20">
+            <dd>上一篇：{$prev}</dd>
+            <dd>下一篇：{$next}</dd>
+        </div>
+    </div>
+</div>
+<div id="comment_form" class="mt20">
+    <div style="width:650px">
+        <div class="left title">我来说几句</div>
+        <div id="input_notice" class="right">
+            您还可以吐槽
+            <span id="input_nums">150</span>
+            字。
+        </div>
+        <div class="clear"></div>
+    </div>
+    <dd>
+        <textarea id="comment" style="width:650px;height:100px;">我来说几句。</textarea>
+    </dd>
+    <button id="sub_comment" type="submit" class="btn btn-min btn-primary">确认吐槽</button>
+</div>
+<div id="comment" class="mt20 border_gray">
+    <div class="comment_unit">
+        <div class="comment_box to">
+            <div class="comment_face left">
+                <img src="__PUBLIC__/img/face/face_1.jpg"/>
+            </div>
+            <div class="comment_content">是么</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="comment_unit">
+        <div class="comment_box to">
+            <div class="comment_face left">
+                <img src="__PUBLIC__/img/face/face_3.jpg"/>
+            </div>
+            <div class="comment_content">是么ffffffff  I don`t knowfffff</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<extend name="Layout:base"/>
+<block name="css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .form_span{
+            display:inline-block;
+            width: 70px;
+            text-align: right;
+        }
+        #addAdmin dd{
+            margin-top:10px;
+            height:30px;
+            line-height:30px;
+        }
+        #addAdmin input{
+            height:20px;
+            width: 150px;
+        }
+        .input_info{
+            color:  #ff3333;
+        }
+
+    </style>
+</block>
+<block name="script">
+    <script>
+        $(function() {
+            $.extend($.fn.validatebox.defaults.rules, {
+                price: {
+                    validator: function(value) {
+                        return /^\d+\.\d{2}$/.test(value);
+                    },
+                    message: '输入格式不对！'
+                },
+                minLength: {
+                    validator: function(value, param) {
+                        return value.length >= param[0];
+                    },
+                    message: '请输入至少{0}个字符.'
+                },
+                pwdMatch: {
+                    validator: function(value) {
+                        return value == $('#pwd').val();
+                    },
+                    message: "两次输入密码不匹配！"
+                }
+            });
+            $('#dg').datagrid({
+                url: "{:U('Admin/User/getAdmin/')}",
+                //url: "__APP__/Admin/User/getAdmin",
+                pagination: true,
+                rownumbers: true, //显示行号
+                columns: [[
+                        {field: 'ck', checkbox: true},
+                        {field: 'username', title: '用户名', width: 100,
+                            editor: {
+                                type: 'validatebox',
+                                options: {
+                                    valueField: 'username',
+                                    required: true
+                                }
+                            }},
+                        {field: 'cttime', title: '创建时间', width: 200},
+                        {field: 'email', title: '邮箱', width: 200,
+                            editor: {
+                                type: 'validatebox',
+                                options: {
+                                    valueField: 'username',
+                                    required: true,
+                                    validType: "email"
+                                }}
+                        },
+                        {field: 'last_login_time', title: '上次登录时间'},
+                        {field: 'last_login_ip', title: '上次登录IP'},
+                        {field: 'count', title: '登录次数'}
+
+
+                    ]]
+            });
+            $('#addAdmin').form({
+                onSubmit: function() {
+                    var isValid = $(this).form('validate');
+                    if (!isValid) {
+                        alert('输入有错误！');
+                    }
+                    return isValid;
+                },
+                success: function(data) {
+                    showMessage(data);
+                    $('#dlg1').dialog('close');
+                    $('#dg').datagrid('load');
+                }
+            });
+            $('#uname').validatebox({
+                required: true
+            });
+            $('#pwd').validatebox({
+                required: true,
+                validType: 'minLength[6]'
+            });
+            $('#pwd2').validatebox({
+                required: true,
+                validType: "pwdMatch"
+            });
+            $('#email').validatebox({
+                validType: "email"
+            });
+        });
+        function updateActions(index) {
+            $('#dg').datagrid('updateRow', {
+                index: index,
+                row: {}
+            });
+        }
+        function delAdmin() {
+            var ss = [];
+            var rows = $('#dg').datagrid('getSelections');
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                ss.push(row.id);
+            }
+            ;
+            $.messager.confirm('Confirm', '确定要删除记录?', function(r) {
+                if (r) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{:U('Admin/user/delAdmin/')}",
+                        data: {"data[]": ss},
+                        success: function(msg) {
+                            showMessage(msg);
+                            $('#dg').datagrid('load', {
+                            });
+                        },
+                    });
+                }
+            });
+        }
+        function showMessage(msg) {
+            $.messager.show({
+                title: "提示信息",
+                msg: msg,
+                timeout: 3000,
+                showType: 'show',
+                style: {
+                    right: 0,
+                    left: '',
+                    top: document.body.scrollTop + document.documentElement.scrollTop,
+                    bottom: ''
+                }
+            })
+        }
+        function editAdmin() {
+            $('#dg').datagrid('beginEdit', getIndex());
+        }
+        function getIndex() {
+            // 获取行索引
+            var row = $('#dg').datagrid('getSelected');
+            var index = $('#dg').datagrid('getRowIndex', row);
+            return index;
+        }
+        function saveEdit() {
+            $('#dg').datagrid('endEdit', getIndex());
+            var updated = $('#dg').datagrid('getChanges', 'updated');
+            if (updated.length) {
+                $.ajax({
+                    type: "POST",
+                    url: "{:U('Admin/user/updateAdmin/')}",
+                    data: {"data": updated},
+                    success: function(msg) {
+                        showMessage(msg);
+                        $('#dg').datagrid('refreshRow', getIndex());
+                    },
+                });
+            } else {
+                showMessage("您未更新任何数据！");
+            }
+
+        }
+        function cancelEdit() {
+            //取消编辑
+            $('#dg').datagrid('cancelEdit', getIndex());
+        }
+    </script>
+</block>
+<block name="main">
+    <div class="curpostion">
+        <ul class="breadcrumb">
+            <li><a href="#">后台管理</a> </li>
+            <li><a href="#">用户管理</a></li>
+            <li class="active">管理员管理</li>
+        </ul>
+    </div>
+    <div id="tb">  
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#dlg1').dialog('open');">添加管理员</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delAdmin();">删除用户</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAdmin();">编辑用户</a>  
+        <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="cancelEdit()">取消</a> 
+        <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="saveEdit();">保存</a>  
+    </div>  
+    <table id='dg'>
+    </table>
+    <div id="dlg1" class="easyui-dialog" title="添加管理员" style="width:420px;height:290px;padding:10px"
+         data-options="
+         iconCls: 'icon-save',
+         toolbar: '#dlg-toolbar',
+         buttons: '#dlg-buttons',
+         closed: 'true'
+         ">
+        <div id='form_box'>
+            <form id='addAdmin' action="{:U('Admin/user/addAdmin/')}" method="post">
+                <dd><span class='form_span'>用户名：</span><input type="text" id='uname' name="uname"/><span class="input_info">（*必填项）</span></dd>
+                <dd><span class='form_span'>密码：</span><input type="password" id='pwd' name="pwd"/><span class="input_info">（*不得少于6位）</span></dd>
+                <dd><span class='form_span'>确认密码：</span><input type="password" id='pwd2' name="pwd2"/><span class="input_info">（*）</span></dd>
+                <dd><span class='form_span'>邮箱：</span><input type="text" id='email' name="email"/></dd>
+                <dd><span class='form_span'></span><button class="btn btn-primary" type="submit">确认添加</button></dd>
+            </form>
+        </div>
+    </div>
+</block>

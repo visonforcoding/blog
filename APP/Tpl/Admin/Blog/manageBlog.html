@@ -1,0 +1,116 @@
+<extend name="Layout:base"/>
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            $('#dg').datagrid({
+                url: "{:U('Admin/Blog/getBlog/')}",
+                //url: "__APP__/Admin/User/getAdmin",
+                pagination: true,
+                rownumbers: true, //显示行号
+                columns: [[
+                        {field: 'ck', checkbox: true},
+                        {field: 'title', title: '文章标题'},
+                        {field: 'author', title: '作者', width: 100},
+                        {field: 'category', title: '标签'},
+                        {field: 'cttime', title: '创建时间', width: 198},
+                        {field: 'content', title: '文章内容', width: 300},
+                        {field: 'action', title: "操作", width: 100, formatter: function(value, row, index) {
+                                return "<a href='__APP__/Admin/Blog/addBlog?do=update&blog_id=" + row.blog_id + "'>编辑</a>";
+                            }}
+                    ]]
+            });
+            $('#addCat_form').form({
+                onSubmit: function() {
+                    var isValid = $(this).form('validate');
+                    if (!isValid) {
+                        showMessage('类别名不能为空！');
+                    }
+                    return isValid;
+                },
+                success: function(data) {
+                    showMessage(data);
+                    //$('#dlg1').dialog('close');
+                    //$('#dg').datagrid('load');
+                }
+            });
+            $('#category').validatebox({
+                required: true
+            });
+        });
+        function del() {
+            var ss = [];
+            var rows = $('#dg').datagrid('getSelections');
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                ss.push(row.id);
+            }
+            ;
+            $.messager.confirm('Confirm', '确定要删除记录?', function(r) {
+                if (r) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{:U('Admin/Blog/delBlog/')}",
+                        data: {"data[]": ss},
+                        success: function(msg) {
+                            showMessage(msg);
+                            $('#dg').datagrid('load', {
+                            });
+                        }
+                    });
+                }
+            });
+        }
+        function showMessage(msg) {
+            $.messager.show({
+                title: "提示信息",
+                msg: msg,
+                timeout: 2000,
+                showType: 'show',
+                style: {
+                    right: 0,
+                    left: '',
+                    top: parent.document.body.scrollTop + parent.document.documentElement.scrollTop,
+                    bottom: ''
+                }
+            });
+        }
+    </script>
+</block>
+<block name="css">
+    <style type="text/css">
+
+    </style>
+</block>
+<block name="main">
+    <div class="curpostion">
+        <ul class="breadcrumb">
+            <li><a href="#">后台管理</a> <span class="divider"></span></li>
+            <li><a href="#">博客管理</a> <span class="divider"></span></li>
+            <li class="active">文章管理</li>
+        </ul>
+    </div>
+    <div >
+        <div class="data-grid">
+            <div id="tb">  
+                <a href="{:U('Admin/Blog/addBlog/')}" class="easyui-linkbutton" iconCls="icon-add" plain="true">发布博文</a>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="del();">删除博文</a>
+                <a href="__APP__/Admin/Blog/addBlog?do=update&blog_id=" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改博文</a>  
+                <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="cancelEdit()">取消</a> 
+                <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="saveEdit();">保存</a>  
+            </div> 
+            <table id="dg">
+
+            </table>
+        </div>
+        <div id="addCategory">
+            <form id="addCat_form" action="{:U('Admin/Blog/addCat')}" method="POST">
+                <p><label>添加分类</label><input type="text" name="category" id="category"/></p>
+                <p><label>分类描述</label>
+                    <textarea id="describe" name="describe" style="width:600px;height:100px;"></textarea></p>
+                <p><label></label><button type="submit" class="btn btn-primary">确认添加</button></p>    
+            </form>
+        </div>
+    </div>
+
+</block>
+

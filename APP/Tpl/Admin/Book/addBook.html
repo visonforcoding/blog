@@ -1,0 +1,139 @@
+<extend name="Layout:base"/>
+<block name="css">
+        <style type="text/css">
+            .curpostion{
+                margin: 10px;
+            }
+            .mid-area{
+                width: 600px;
+                height: 100px;
+            }
+        </style>
+</block>
+<block name="script">
+        <script type="text/javascript">
+            $(function() {
+                /****启用kindEditor***/
+                KindEditor.ready(function(K) {
+                    window.editor = K.create('#editor', {
+                        syncTyle: 'auto',
+                        allowUpload : true, //允许上传图片
+                        uploadJson : '__APP__/Admin/Blog/doImgUpload' //服务端上传图片处理URI
+                    });
+                });
+                $('#addBlog').form({
+                success: function(data) {
+                    showMessage(data);
+                }
+                });
+          <php> if (isset($_GET['do'])){
+                if ($_GET['do'] == "update"){
+                $id = $_GET['blog_id'];
+                        echo "$('#addBlog').form('load','__APP__/Admin/Blog/getBlog?id=$id');";
+                        echo "$('#addBlog').attr('action','__APP__/Admin/Blog/doaddBlog?do=update&blog_id=$id');";
+                }
+            } </php>
+              $('#pic').on('click',function(){
+                  $('#picBox').window('open');
+              });
+              $('.pic').on('click',function(){
+                  var path = $(this).attr('src');
+                   $('#pic').val(path);
+                   $('.pic').css('background','transparent');
+                   $(this).css('background','#005916');
+              });
+              
+            });
+                    function showMessage(msg) {
+                        $.messager.show({
+                            title: "提示信息",
+                            msg: msg,
+                            timeout: 2000,
+                            showType: 'show',
+                            style: {
+                                right: 0,
+                                left: '',
+                                top: parent.document.body.scrollTop + parent.document.documentElement.scrollTop,
+                                bottom: ''
+                            }
+                        });
+                    }
+        </script>
+</block>
+<block name="main">
+        <div class="curpostion">
+            <ul class="breadcrumb">
+                <li><a href="#">后台管理</a> </li>
+                <li><a href="#">图书管理</a></li>
+                <li class="active">添加图书</li>
+            </ul>
+        </div>
+          <div class="content">
+            <form id="addBlog" action="__APP__/Admin/Book/doAddBook" method="post" >
+                <div class="control-group">
+                    <label  for="name">书名</label>
+                    <input  type="text" id="title" style="width:400px;" name="name" placeholder="书名">
+                </div>
+                 <div class="control-group">
+                    <label  for="name">短书名</label>
+                    <input  type="text" id="title" style="width:300px;" name="shortname" placeholder="短书名">
+                </div>
+                <div class="control-group">
+                    <label  for="author">作者</label>
+                        <input type="text" id="author" name="author" placeholder="作者">
+                </div>
+                  <div class="control-group">
+                    <label  for="cat_id">分类</label>
+                        <select name = "cat_id">
+                            <foreach name="bookCat" item="vo">
+                                <option value="{$vo.id}">{$vo.category}</option>
+                            </foreach>
+                        </select>
+                        <a href="__APP__/Admin/Blog/manageBlog">+添加新分类</a>
+                    </div>
+                   <div class="control-group">
+                    <label  for="admire">编辑推荐</label>
+                        <textarea name="admire" class="mid-area" id="admire"></textarea>
+                    </div>
+                <div class="control-group">
+                   <label  for="pic">封面</label>
+                        <input type="text" style="width:300px;" name="pic" id="pic"/>
+                   </div>
+              <div id="picBox" class="easyui-window" title="封面选择" 
+                     data-options="iconCls:'icon-save',modal:true,closed:true"  style="width:700px;height:500px;">
+                    <foreach name="pic" item="vo">
+                        <img src="{$vo}" class="pic" alt="pic"/>
+                    </foreach>
+             <div  class="toolbar" style="text-align:right">
+                <a href="#" class="easyui-linkbutton" iconCls="icon-save" onclick="javascript:$('#picBox').window('close')">确定</a>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#picBox').window('close')">取消</a>
+             </div>
+               </div>
+                <div class="control-group">
+                    <label for="download">下载地址</label>
+                    <input type="text" style="width:300px;" name="download" id="download"/>
+                </div>
+                <div class="control-group">
+                    <label for="code">提取密码</label>
+                    <input type="text"  name="code" id="code"/>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="summary">导言</label><BR>
+                    <div class="editorBox">
+                        <textarea id="editor" name="summary" style="width:100%;height:400px;">
+                                 <php>if(isset($_GET['do'])){
+                                     if(isset($_GET['blog_id'])){
+                                        echo $content;
+                                      }
+                                    }
+                                 </php>    
+                        </textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label></label>
+                    <button type="submit" class="btn ">确认发布</button>
+                </div>
+            </form>
+        </div>
+</block>

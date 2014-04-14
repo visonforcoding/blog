@@ -1,0 +1,95 @@
+<extend name="Layout:layout" />
+<block name="css">
+    <style type="text/css">
+        hr{
+            margin: 0px;
+        }
+        .unit{
+            margin-top: 40px;
+        }
+        .unit_title{
+            font-weight: bold;
+        }
+        .book_unit{
+            width: 140px;
+            height:190px;
+            margin: 30px 15px;
+            -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+            float:left;
+            position: relative;
+        }
+        .book_unit .popover{
+            width: 200px;
+            height: 220px;
+        }
+        .book_img img{
+            width: 140px;
+            height: 164px;
+        }
+        .book_bar{
+            position:absolute;
+            bottom: 0px;
+        }
+        .book_info{
+            height:26px;
+        }
+        .thumbsup{
+            margin:5px;
+        }
+        .download{
+            margin-left:10px;
+        }
+        .book_name{
+            margin-top:10px;
+        }
+       
+    </style>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        $(function() {
+            $('.book').popover();
+        });
+        //阻止事件冒泡函数
+        function stopBubble(e)
+        {
+            if (e && e.stopPropagation)
+                e.stopPropagation();
+            else
+                window.event.cancelBubble = true;
+        }
+    </script>
+</block>
+<block name="main">
+    <include file="Common:book_top"/>
+    <div id="center" class="container">
+        <div class="center_left">
+        <div class="unit">
+            <div class="unit_title">
+                最新上传<hr>
+            </div>
+            <div class="unit_contnet">
+                <foreach name="book" item="v">
+                        <div class="book_unit">
+                            <div class="book_img">
+                                <a  href="__APP__/Home/Book/book/id/{$v.id}.html" data-trigger="hover" title="{$v.name}" 
+                                    class="book"  data-content="{$v.admire}">
+                                    <img src="{$v.pic}"  alt="{$v.name}"/>
+                                </a>
+                            </div>
+                            <div class="book_info">
+                                <p class="book_bar"><a class="thumbsup"><i class="icon-thumbs-up"></i> 赞({$v.praise})</a>
+                                    <a class="download"><i class="icon-download-alt"></i> 下载({$v.down})</a></p>
+                            </div>
+                            <div class="book_name">
+                                <h5> <a>{$v.shortname}</a></h5>
+                            </div>
+                        </div>
+                </foreach>
+                            <div class="clear"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</block>
